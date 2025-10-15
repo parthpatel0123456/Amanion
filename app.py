@@ -5,7 +5,7 @@ import os
 
 load_dotenv()
 
-MODEL = "Qwen/Qwen2.5-7B-Instruct"  # or: "meta-llama/Meta-Llama-3.1-8B-Instruct"
+MODEL = "meta-llama/Llama-3.1-8B-Instruct"  
 HF_TOKEN = os.getenv("HF_TOKEN")    # only required for gated models like Llama
 
 client = InferenceClient(model=MODEL, token=HF_TOKEN)
