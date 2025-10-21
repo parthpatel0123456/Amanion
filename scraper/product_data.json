@@ -1,5 +1,17 @@
 [
   {
-    "title": "Apple 2024 MacBook Pro Laptop with M4 chip with 10‑core CPU and 10‑core GPU: Built for Apple Intelligence, 14.2-inch Liquid Retina XDR Display, 16GB Unified Memory, 512GB SSD Storage; Space Black"
+    "title": "Apple 2024 MacBook Pro Laptop with M4 chip with 10‑core CPU and 10‑core GPU: Built for Apple Intelligence, 14.2-inch Liquid Retina XDR Display, 16GB Unified Memory, 512GB SSD Storage; Space Black",
+    "reviews": "4.8 out of 5 stars",
+    "price": "$1,349.00 with 16 percent savings",
+    "brand": "Apple",
+    "model_name": "MacBook Pro",
+    "screen_size": "14.2 Inches",
+    "color": "Space Black",
+    "hard_disk_size": "512 GB",
+    "cpu_model": "Apple M4",
+    "ram_memory_installed_size": "16 GB",
+    "operating_system": "Mac OS",
+    "special_feature": "Backlit Keyboard, Fingerprint Reader",
+    "graphics_card_description": "Integrated"
   }
 ]

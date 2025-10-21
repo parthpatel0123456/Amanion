@@ -10,7 +10,18 @@ async def main():
         "baseSelector": "body",
         "fields": [
             {"name": "title", "selector": "#productTitle", "type": "text"},
-            {"name": "brand", "selector": "#tr.po-brand", "type": "text"},
+            {"name": "reviews", "selector": "#acrPopover .a-icon-alt", "type": "text"},
+            {"name": "price", "selector": ".aok-offscreen", "type": "text"},
+            {"name": "brand", "selector": "tr.po-brand .po-break-word", "type": "text"},
+            {"name": "model_name", "selector": "tr.po-model_name .po-break-word", "type": "text"},
+            {"name": "screen_size", "selector": "tr.po-display\\.size .po-break-word", "type": "text"},
+            {"name": "color", "selector": "tr.po-color .po-break-word", "type": "text"},
+            {"name": "hard_disk_size", "selector": "tr.po-hard_disk\\.size .po-break-word", "type": "text"},
+            {"name": "cpu_model", "selector": "tr.po-cpu_model\\.family .po-break-word", "type": "text"},
+            {"name": "ram_memory_installed_size", "selector": "tr.po-ram_memory\\.installed_size .po-break-word", "type": "text"},
+            {"name": "operating_system", "selector": "tr.po-operating_system .po-break-word", "type": "text"},
+            {"name": "special_feature", "selector": "tr.po-special_feature .po-break-word", "type": "text"},
+            {"name": "graphics_card_description", "selector": "tr.po-graphics_description .po-break-word", "type": "text"},
         ],
     }
 
