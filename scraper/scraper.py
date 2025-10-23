@@ -52,25 +52,43 @@ async def main():
     # Create an instance of AsyncWebCrawler
     async with AsyncWebCrawler() as crawler:
         # Run the crawler on a URL
+        search_term = "dell laptop"
+        search_tern = search_term.replace(" ", "+")
+
         extraction = JsonCssExtractionStrategy(schema=schema)
         config = CrawlerRunConfig(extraction_strategy=extraction)
-        result = await crawler.arun(url="https://www.amazon.com/s?k=macbook+pro", config=config)
+
+        result = await crawler.arun(url=f"https://www.amazon.com/s?k={search_term}", config=config)
         data = json.loads(result.extracted_content)
         with open("product_data.json", "w") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
         with open("product_data.json", "r") as f:
-            data = json.load(f)
+            link_data = json.load(f)
 
-        links = [item["link"] for item in data]
+        links = [item["link"] for item in link_data]
+
+        products = []
 
         p_extraction = JsonCssExtractionStrategy(schema=product_schema)
         p_config = CrawlerRunConfig(extraction_strategy=p_extraction)
+
         for link in links:
             result = await crawler.arun(url=f"{base_url}{link}", config=p_config)
-            data = json.loads(result.extracted_content)
-            with open("data.json", "w") as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
+            p_data = json.loads(result.extracted_content)
+
+            
+            products.extend(p_data)
+            # elif isinstance(p_data, list):
+            #     for item in p_data:
+            #         if isinstance(item, list):  # flatten nested lists
+            #             products.extend(item)
+            #         else:
+            #             products.append(item)
+
+        # write all products once
+        with open("data.json", "w") as f:
+            json.dump(products, f, indent=2, ensure_ascii=False)
                 
 
 # Run the async main function
