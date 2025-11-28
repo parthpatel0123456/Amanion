@@ -52,7 +52,7 @@ async def main():
     # Create an instance of AsyncWebCrawler
     async with AsyncWebCrawler() as crawler:
         # Run the crawler on a URL
-        search_term = "dell laptop"
+        search_term = "kitchen blenders"
         search_tern = search_term.replace(" ", "+")
 
         extraction = JsonCssExtractionStrategy(schema=schema)
