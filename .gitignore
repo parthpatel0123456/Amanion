@@ -15,6 +15,9 @@ env/
 *.db
 *.sqlite3
 
+# React
+node_modules/
+
 # Logs
 *.log
 
